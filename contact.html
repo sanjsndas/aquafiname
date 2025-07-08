@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquafiname - Contact Us</title>
+    <!-- Google Fonts - Inter for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAFA; /* Cloud White */
+            color: #455A64; /* Graphite Gray for text */
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Container for content centering and max-width */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles (Copied from index.html for consistency) */
+        header {
+            background-color: #0288D1; /* Pure Water Blue */
+            color: #FAFAFA;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #FAFAFA;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            border-radius: 8px; /* Rounded corners for logo area */
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-icon {
+            /* Abstract water droplet with geometric refinement */
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            background-color: #66BB6A; /* Leaf Green accent */
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 70%;
+            height: 70%;
+            background-color: #B3E5FC; /* Aqua Light Blue */
+            border-radius: 30%;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #FAFAFA;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            border-radius: 8px; /* Rounded corners for nav items */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #B3E5FC; /* Aqua Light Blue */
+            color: #0288D1; /* Pure Water Blue */
+        }
+
+        /* Main Content Section Styling */
+        .contact-page-content {
+            padding: 60px 0;
+            margin-bottom: 40px;
+            background-color: #FAFAFA;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-page-content h1 {
+            font-size: 3em;
+            color: #0288D1;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact-page-content h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: #66BB6A;
+            border-radius: 2px;
+        }
+
+        .contact-page-content h2 {
+            font-size: 2.2em;
+            color: #455A64;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-bottom: 2px solid #B3E5FC;
+            padding-bottom: 10px;
+        }
+
+        .contact-page-content h3 {
+            font-size: 1.8em;
+            color: #0288D1;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .contact-page-content p,
+        .contact-page-content ul {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #455A64;
+        }
+
+        .contact-page-content ul {
+            list-style: none; /* Removed disc for cleaner look */
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .contact-page-content ul li {
+            margin-bottom: 10px;
+            padding-left: 0; /* Align with other text */
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background-color: #F0F4F7; /* Light gray for cards */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-card h3 {
+            color: #0288D1;
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            font-size: 1em;
+            color: #455A64;
+            margin-bottom: 10px;
+        }
+
+        .contact-card a {
+            color: #66BB6A; /* Leaf Green for links */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: #0288D1; /* Pure Water Blue on hover */
+        }
+
+        .contact-form-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #FAFAFA;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #455A64;
+        }
+
+        .contact-form-section input[type="text"],
+        .contact-form-section input[type="email"],
+        .contact-form-section textarea {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #B3E5FC; /* Aqua Light Blue border */
+            border-radius: 8px;
+            font-size: 1em;
+            color: #455A64;
+            background-color: #FAFAFA;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form-section input[type="text"]:focus,
+        .contact-form-section input[type="email"]:focus,
+        .contact-form-section textarea:focus {
+            border-color: #0288D1; /* Pure Water Blue on focus */
+            box-shadow: 0 0 0 3px rgba(2, 136, 209, 0.2);
+            outline: none;
+        }
+
+        .contact-form-section textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form-section button {
+            background-color: #0288D1; /* Pure Water Blue */
+            color: #FAFAFA;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form-section button:hover {
+            background-color: #017acb; /* Slightly darker blue */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer Styles (Copied from index.html for consistency) */
+        footer {
+            background-color: #455A64; /* Graphite Gray */
+            color: #FAFAFA;
+            padding: 40px 0;
+            text-align: center;
+            border-top-left-radius: 20px; /* Rounded corners for footer */
+            border-top-right-radius: 20px;
+            margin-top: 60px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        footer .social-links a {
+            color: #FAFAFA;
+            font-size: 1.8em;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #66BB6A; /* Leaf Green on hover */
+        }
+
+        /* Responsive Design (Copied from index.html for consistency) */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 15px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .contact-page-content h1 {
+                font-size: 2.2em;
+            }
+
+            .contact-page-content h2 {
+                font-size: 1.8em;
+            }
+
+            .contact-page-content h3 {
+                font-size: 1.5em;
+            }
+
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.8em;
+            }
+
+            .contact-page-content h1 {
+                font-size: 1.8em;
+            }
+
+            .contact-page-content h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-page-content h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                Aquafiname
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-page-content">
+            <div class="container">
+                <h1>Contact Aquafiname</h1>
+                <p>We are always eager to connect with individuals, businesses, and communities passionate about sustainable water management. Whether you have a question about our state-of-the-art rainwater harvesting systems, need assistance with your smart monitoring solution, or are interested in exploring a partnership, the Aquafiname team is here to provide expert guidance and support. Your journey towards smarter water and greener living begins with a conversation, and we are committed to making that interaction as seamless and informative as possible. Reach out to us through the various channels provided below, and let's work together to build a more water-resilient future.</p>
+                <p>Our commitment to customer satisfaction extends to ensuring easy and direct communication. We understand that your inquiries are important, and our dedicated teams are structured to provide timely and comprehensive responses. From initial inquiries about system feasibility to detailed technical support for installed products, we have specialized channels to address your specific needs. We value your feedback and questions as they help us continuously improve our services and products. Don't hesitate to get in touch; we look forward to hearing from you and assisting you in any way we can.</p>
+
+                <h2>General Inquiries & Contact Form</h2>
+                <p>For all general questions about Aquafiname, our mission, or our broad range of sustainable water solutions, please use the contact form below. This is the quickest way to get in touch with our central team, who will direct your inquiry to the most appropriate department. We aim to respond to all general inquiries within 24-48 business hours. Please provide as much detail as possible in your message so we can offer the most relevant and helpful response.</p>
+                <p>We encourage you to use this form for initial contact regarding new projects, partnership opportunities, media inquiries, or if you are unsure which specific department to reach. Our team is equipped to handle a wide array of questions and will ensure your message is routed efficiently. We believe in transparent and open communication, and this form serves as a direct line to our experts who are ready to assist you in understanding how Aquafiname can help you achieve your water conservation goals. Your privacy is paramount, and all information submitted through this form is handled in accordance with our Privacy Policy.</p>
+
+                <div class="contact-form-section">
+                    <h3>Send Us a Message</h3>
+                    <form action="#" method="POST">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required>
+
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+
+                <h2>Direct Contact Information</h2>
+                <p>For specific inquiries, you can reach out directly to the relevant departments using the information below. This can help expedite your request and ensure you connect with the specialists best equipped to assist you.</p>
+
+                <div class="contact-info-grid">
+                    <div class="contact-card">
+                        <h3>Customer Support</h3>
+                        <p>For existing customers needing assistance with their Aquafiname system, smart monitoring app, or general product support.</p>
+                        <p><strong>Email:</strong> <a href="mailto:support@aquafiname.com">support@aquafiname.com</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+15551234567">+1 (555) 123-4567</a> (Press 1 for Support)</p>
+                        <p><strong>Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM (Local Time)</p>
+                        <p>Our dedicated customer support team is committed to providing prompt and effective solutions to ensure your Aquafiname system operates flawlessly. Whether you have questions about performance, need help troubleshooting, or require guidance on maintenance, our knowledgeable representatives are ready to assist you. We understand the importance of reliable water access and are here to ensure your peace of mind. Our support channels are designed for quick resolution, minimizing any potential downtime and maximizing your system's efficiency. We also offer an extensive online knowledge base with FAQs and guides for self-service.</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>Sales & New Projects</h3>
+                        <p>Interested in purchasing an Aquafiname system or starting a new rainwater harvesting project?</p>
+                        <p><strong>Email:</strong> <a href="mailto:sales@aquafiname.com">sales@aquafiname.com</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+15551234568">+1 (555) 123-4568</a> (Press 2 for Sales)</p>
+                        <p><strong>Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM (Local Time)</p>
+                        <p>Our sales team comprises experts who can guide you through the entire process, from initial consultation and site assessment to custom system design and quotation. We are here to answer all your questions about our residential, commercial, and industrial solutions, helping you identify the perfect system to meet your water conservation goals and budget. We can provide detailed information on product specifications, installation processes, and the long-term benefits of investing in Aquafiname technology. Let us help you take the first step towards water independence and a greener future. We offer personalized consultations to ensure your solution is perfectly tailored.</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>Technical Support & Engineering</h3>
+                        <p>For complex technical inquiries, engineering specifications, or advanced system diagnostics.</p>
+                        <p><strong>Email:</strong> <a href="mailto:techsupport@aquafiname.com">techsupport@aquafiname.com</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+15551234569">+1 (555) 123-4569</a> (Press 3 for Technical)</p>
+                        <p><strong>Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM (Local Time)</p>
+                        <p>Our highly skilled technical support and engineering team is available to assist with detailed system questions, integration challenges, and advanced troubleshooting. If you are an architect, developer, or facility manager seeking in-depth technical specifications or require assistance with complex project planning, this is the ideal contact point. We provide specialized expertise to ensure seamless integration and optimal performance of Aquafiname systems in diverse environments. Our engineers are at the forefront of rainwater harvesting technology, ready to tackle any challenge and provide innovative solutions. We pride ourselves on our problem-solving capabilities and commitment to technical excellence, ensuring your project's success.</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>Partnerships & Media</h3>
+                        <p>For collaboration opportunities, media inquiries, or press relations.</p>
+                        <p><strong>Email:</strong> <a href="mailto:partnerships@aquafiname.com">partnerships@aquafiname.com</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+15551234570">+1 (555) 123-4570</a> (Press 4 for Partnerships)</p>
+                        <p><strong>Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM (Local Time)</p>
+                        <p>Aquafiname is always looking for opportunities to collaborate with like-minded organizations, researchers, and media outlets to further the cause of sustainable water management. If you represent a potential partner, an academic institution, or a media organization, please reach out to this department. We are keen to explore synergies that can amplify our impact and accelerate the adoption of rainwater harvesting solutions globally. Our team is available to discuss joint ventures, research initiatives, and provide information for articles, interviews, or documentaries. We believe in the power of collaboration to drive innovation and create a more sustainable future for water resources. Let's explore how we can work together.</p>
+                    </div>
+                </div>
+
+                <h2>Visit Our Headquarters</h2>
+                <p>While we encourage initial contact through our digital channels for efficiency, you are welcome to visit our headquarters by appointment. Our office serves as a hub for innovation, design, and customer engagement. Please schedule your visit in advance to ensure that the appropriate team members are available to meet with you and provide the best possible experience. We are located in a vibrant area committed to green infrastructure and sustainable practices.</p>
+                <p><strong>Aquafiname Headquarters:</strong></p>
+                <p>123 Eco-Drive, Green City, Aqua State, 54321, Country</p>
+                <p>[Please note: This is a placeholder address. For actual visits, please confirm the exact address and directions during your appointment scheduling.]</p>
+                <p>Our facility is designed to showcase some of our latest technologies and provide a collaborative environment for our team and partners. We are proud of our commitment to sustainability, which is reflected in our office design and operational practices. Visiting us can provide a deeper insight into the Aquafiname philosophy and the advanced engineering behind our solutions. We look forward to welcoming you and demonstrating our dedication to smarter water management firsthand.</p>
+
+                <h2>Connect With Us Online</h2>
+                <p>Stay updated with the latest news, product innovations, and sustainability insights from Aquafiname by following us on our social media channels. We regularly share valuable content, project highlights, and engage with our community online. Join the conversation and become part of the movement towards a greener, more water-resilient world.</p>
+                <p>Our social media platforms are also a great way to send us quick messages or engage with our broader community. We actively monitor our channels and strive to respond to comments and direct messages. Follow us to see how Aquafiname is making a tangible difference in water conservation across urban environments, and get inspired by stories of sustainable living. We share tips, industry news, and updates on our community initiatives. Your engagement helps us spread the message of smarter water management further.</p>
+                <div class="social-links" style="text-align: center; margin-top: 20px;">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+
+                <h2>Feedback and Suggestions</h2>
+                <p>Your feedback is invaluable to us. At Aquafiname, we are continuously striving to improve our products, services, and overall customer experience. If you have any suggestions, comments, or ideas on how we can serve you better, please do not hesitate to share them. We believe that continuous improvement is driven by the insights of our users and partners. You can use the general contact form above or email us directly at <a href="mailto:feedback@aquafiname.com">feedback@aquafiname.com</a>. We appreciate your input and thank you for helping us grow and innovate.</p>
+                <p>Every piece of feedback, whether positive or constructive, is carefully reviewed by our team. It helps us identify areas of strength and opportunities for enhancement. We are committed to an iterative development process, where user insights directly influence our product roadmap and service delivery. Your voice matters in shaping the future of sustainable water solutions. Thank you for being an active participant in the Aquafiname community and for helping us achieve our mission of smarter water and greener living.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Aquafiname. All rights reserved.</p>
+            <p>Smarter Water. Greener Living. Harvest Every Drop. Precision Rainwater Solutions.</p>
+            <p><strong>Aquafiname Headquarters:</strong></p>
+            <p>123 Eco-Drive, Green City, Aqua State, 54321, Country</p>
+            <p>Email: info@aquafiname.com | Phone: +1 (555) 123-4567</p>
+            <div class="social-links">
+                <!-- Font Awesome for social icons -->
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p><small>Disclaimer: The information on this site is for general guidance only. Consult professionals for specific advice.</small></p>
+        </div>
+    </footer>
+    <!-- Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

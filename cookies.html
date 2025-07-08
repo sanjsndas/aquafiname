@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquafiname - Cookies Policy</title>
+    <!-- Google Fonts - Inter for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAFA; /* Cloud White */
+            color: #455A64; /* Graphite Gray for text */
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Container for content centering and max-width */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles (Copied from index.html for consistency) */
+        header {
+            background-color: #0288D1; /* Pure Water Blue */
+            color: #FAFAFA;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #FAFAFA;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            border-radius: 8px; /* Rounded corners for logo area */
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-icon {
+            /* Abstract water droplet with geometric refinement */
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            background-color: #66BB6A; /* Leaf Green accent */
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 70%;
+            height: 70%;
+            background-color: #B3E5FC; /* Aqua Light Blue */
+            border-radius: 30%;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #FAFAFA;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            border-radius: 8px; /* Rounded corners for nav items */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #B3E5FC; /* Aqua Light Blue */
+            color: #0288D1; /* Pure Water Blue */
+        }
+
+        /* Main Content Section Styling */
+        .cookies-content {
+            padding: 60px 0;
+            margin-bottom: 40px;
+            background-color: #FAFAFA;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .cookies-content h1 {
+            font-size: 3em;
+            color: #0288D1;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .cookies-content h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: #66BB6A;
+            border-radius: 2px;
+        }
+
+        .cookies-content h2 {
+            font-size: 2.2em;
+            color: #455A64;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-bottom: 2px solid #B3E5FC;
+            padding-bottom: 10px;
+        }
+
+        .cookies-content h3 {
+            font-size: 1.8em;
+            color: #0288D1;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .cookies-content p,
+        .cookies-content ul,
+        .cookies-content ol {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #455A64;
+        }
+
+        .cookies-content ul {
+            list-style: disc;
+            margin-left: 25px;
+            padding-left: 0;
+        }
+
+        .cookies-content ol {
+            list-style: decimal;
+            margin-left: 25px;
+            padding-left: 0;
+        }
+
+        .cookies-content ul li,
+        .cookies-content ol li {
+            margin-bottom: 10px;
+        }
+
+        /* Cookie Consent Dialogue Box */
+        .cookie-consent-overlay {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            z-index: 2000;
+            transition: opacity 0.3s ease;
+        }
+
+        .cookie-consent-box {
+            background-color: #FAFAFA;
+            color: #455A64;
+            padding: 25px 30px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            animation: slideUp 0.5s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .cookie-consent-box p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .cookie-consent-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .cookie-consent-buttons button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cookie-consent-buttons button.accept {
+            background-color: #66BB6A; /* Leaf Green */
+            color: #FAFAFA;
+        }
+
+        .cookie-consent-buttons button.accept:hover {
+            background-color: #5cb85c;
+            transform: translateY(-2px);
+        }
+
+        .cookie-consent-buttons button.decline {
+            background-color: #0288D1; /* Pure Water Blue */
+            color: #FAFAFA;
+        }
+
+        .cookie-consent-buttons button.decline:hover {
+            background-color: #017acb;
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styles (Copied from index.html for consistency) */
+        footer {
+            background-color: #455A64; /* Graphite Gray */
+            color: #FAFAFA;
+            padding: 40px 0;
+            text-align: center;
+            border-top-left-radius: 20px; /* Rounded corners for footer */
+            border-top-right-radius: 20px;
+            margin-top: 60px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        footer .social-links a {
+            color: #FAFAFA;
+            font-size: 1.8em;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #66BB6A; /* Leaf Green on hover */
+        }
+
+        /* Responsive Design (Copied from index.html for consistency) */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 15px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .cookies-content h1 {
+                font-size: 2.2em;
+            }
+
+            .cookies-content h2 {
+                font-size: 1.8em;
+            }
+
+            .cookies-content h3 {
+                font-size: 1.5em;
+            }
+
+            .cookie-consent-box {
+                padding: 20px;
+            }
+
+            .cookie-consent-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .cookie-consent-buttons button {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.8em;
+            }
+
+            .cookies-content h1 {
+                font-size: 1.8em;
+            }
+
+            .cookies-content h2 {
+                font-size: 1.5em;
+            }
+
+            .cookies-content h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"></div>
+                Aquafiname
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html" class="active">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="cookies-content">
+            <div class="container">
+                <h1>Cookies Policy for Aquafiname</h1>
+                <p><strong>Last Updated: July 5, 2025</strong></p>
+
+                <p>Welcome to Aquafiname's Cookies Policy. This document explains what cookies are, how Aquafiname ("we," "our," or "us") uses them on our website and through our services, and what choices you have regarding their use. By continuing to browse and use our website, you are agreeing to our use of cookies in accordance with this policy. We are committed to transparency and empowering you with control over your digital experience while ensuring the functionality and security of our online platforms.</p>
+                <p>This policy is designed to provide you with a comprehensive understanding of the various types of cookies we deploy, their specific purposes, and their impact on your browsing experience. We recognize the importance of data privacy and aim to be as clear as possible about how we handle information collected through these technologies. Your trust is paramount to us, and this policy reflects our dedication to responsible data practices. We encourage you to read this policy in conjunction with our <a href="privacy.html">Privacy Policy</a> to gain a complete picture of how your personal data is managed by Aquafiname.</p>
+
+                <h2>1. What Are Cookies?</h2>
+                <p>Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently, as well as to provide reporting information and to remember your preferences. Cookies are essentially a website's "memory," allowing it to recognize your device on subsequent visits and recall information about your previous interactions, such as items added to a shopping cart, login details, or language preferences. This recognition helps to streamline your browsing experience, making it faster and more convenient.</p>
+                <p>There are different types of cookies, each serving distinct functions. Some cookies are essential for a website to operate correctly, enabling core functionalities like secure logins or navigation. Others are used to analyze website performance, track user behavior, or personalize content and advertisements. Cookies can be set by the website you are visiting (first-party cookies) or by third-party services that the website uses (third-party cookies). The duration for which a cookie remains on your device can also vary; some expire after a single browsing session (session cookies), while others persist for a longer, predefined period (persistent cookies).</p>
+                <p>The information stored within cookies is typically anonymous and does not directly identify you as an individual. However, in some cases, cookie data can be linked with other information to create a profile of your browsing habits. This is why understanding and managing your cookie preferences is crucial for maintaining your online privacy. Modern web browsers offer robust tools for users to control cookie settings, allowing you to accept, reject, or delete cookies, either globally or on a site-by-site basis. Aquafiname is committed to respecting your choices regarding cookies and providing you with the necessary tools and information to manage them effectively.</p>
+
+                <h2>2. How Aquafiname Uses Cookies</h2>
+                <p>Aquafiname uses cookies for several purposes to enhance your experience on our website, understand how our services are used, and deliver relevant information about our sustainable water solutions. Our use of cookies falls into several categories, each contributing to a more effective and user-friendly online environment:</p>
+                <h3>2.1. Strictly Necessary Cookies:</h3>
+                <p>These cookies are essential for the operation of our website and enable you to navigate around it and use its features, such as accessing secure areas or making use of e-billing services. Without these cookies, services you have asked for, like remembering your login details or form inputs, cannot be provided. They are typically set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in, or filling in forms. These cookies do not store any personally identifiable information and are usually session-based, meaning they are deleted when you close your browser. They are fundamental to the basic functionality and security of our website, ensuring that core features work as expected and that your interactions are secure. For example, a strictly necessary cookie might keep you logged in as you move between different pages of our smart monitoring dashboard, preventing the need to re-enter your credentials repeatedly. Another common use is to remember your cookie consent preferences, so you don't have to accept cookies every time you visit. Because these cookies are indispensable for the website's operation, they cannot be switched off in our systems. However, you can set your browser to block or alert you about these cookies, but some parts of the site will not work. This category of cookies ensures that our website performs its fundamental tasks reliably and securely, providing you with a stable and consistent browsing experience.</p>
+
+                <h3>2.2. Performance Cookies (Analytical Cookies):</h3>
+                <p>These cookies collect information about how visitors use our website, for instance, which pages visitors go to most often, and if they get error messages from web pages. These cookies do not collect information that identifies a visitor. All information these cookies collect is aggregated and therefore anonymous. It is only used to improve how a website works. Specifically, Aquafiname uses these cookies to understand website traffic, analyze user navigation patterns, and identify areas for improvement in our website's design and content. For example, we might use these cookies to determine which sections of our rainwater harvesting solutions are most popular, or to identify if users are encountering difficulties completing a contact form. This data helps us optimize our website's performance, ensuring a smoother and more intuitive user experience. We use third-party analytics services, such as Google Analytics, which deploy their own cookies to collect this information on our behalf. The data collected typically includes the number of visitors, the pages they visit, the time spent on each page, and the path taken through the site. This aggregated and anonymous data provides us with valuable insights into how our website is being used, allowing us to make informed decisions about content strategy, user interface improvements, and overall site functionality. These cookies are crucial for us to continually enhance our online presence and ensure that we are providing the most relevant and accessible information about our sustainable water solutions. While these cookies do not directly identify you, they contribute to a better browsing experience for all users by helping us fine-tune our website. You typically have the option to opt-out of these cookies through your browser settings or specific opt-out tools provided by the analytics service providers. Blocking these cookies will not affect the core functionality of the website, but it may limit our ability to understand and improve your experience.</p>
+
+                <h3>2.3. Functionality Cookies:</h3>
+                <p>Functionality cookies allow our website to remember choices you make (such as your user name, language, or the region you are in) and provide enhanced, more personal features. For example, these cookies can be used to remember changes you have made to text size, fonts, and other parts of web pages that you can customize. They may also be used to provide services you have asked for, such as watching a video or commenting on a blog. The purpose of these cookies is to provide you with a more personalized and convenient experience, avoiding the need for you to re-enter your preferences every time you visit. For Aquafiname, this might include remembering your preferred language for website content, or retaining information you've entered into our "Water Savings Calculator" for a subsequent visit. They can also be used to remember if you've already dismissed a pop-up message, ensuring you don't see it repeatedly. While these cookies enhance user experience, they are not strictly necessary for the website's operation. The information these cookies collect may be anonymized and they cannot track your browsing activity on other websites. By allowing these cookies, you enable us to provide a more tailored and efficient service. If you do not allow these cookies, then some or all of these services may not function properly. For example, if you set your browser to block functionality cookies, you might find that certain personalized features, such as remembering your login status for the smart monitoring dashboard, are unavailable, requiring you to re-enter information more frequently. These cookies are designed to make your interaction with our website more seamless and enjoyable, reflecting our commitment to user-centric design and convenience in your journey towards smarter water management.</p>
+
+                <h3>2.4. Targeting/Advertising Cookies:</h3>
+                <p>These cookies are used to deliver advertisements more relevant to you and your interests. They are also used to limit the number of times you see an advertisement as well as help measure the effectiveness of the advertising campaign. They are usually placed by advertising networks with the website operator’s permission. They remember that you have visited a website and this information is shared with other organizations such as advertisers. Quite often, targeting or advertising cookies will be linked to site functionality provided by the other organization. Aquafiname may use these cookies to understand your interests based on your browsing behavior on our site and potentially other sites, allowing us to present you with tailored information about our rainwater harvesting solutions, smart monitoring systems, or sustainability initiatives that are most relevant to your needs. For example, if you frequently visit pages about residential systems, these cookies might help us show you advertisements specifically for home-based water solutions. They also help us avoid showing you irrelevant ads. These cookies may collect information about your browsing habits across different websites to build a profile of your interests. This data is often used to create audience segments for targeted advertising campaigns on third-party platforms. While these cookies are not essential for the basic functionality of our website, they play a significant role in our marketing efforts, helping us reach potential clients who are genuinely interested in sustainable water solutions. You have the option to opt-out of these cookies, which will typically result in you seeing less targeted advertising. However, opting out of advertising cookies does not mean you will not see any ads; it simply means the ads you see may be less relevant to your interests. We work with reputable advertising partners who adhere to strict privacy standards. By managing these cookies, you can control the extent to which your online activity is used for personalized advertising. We are committed to using these cookies responsibly to inform and engage our audience about the benefits of smarter water management, rather than for intrusive or excessive advertising practices. Your control over these cookies ensures that your online experience remains aligned with your preferences and privacy expectations.</p>
+
+                <h3>2.5. Social Media Cookies:</h3>
+                <p>Our website may include social media features, such as "Like" buttons or sharing widgets, provided by social media platforms like Facebook, Twitter, LinkedIn, and Instagram. These features may collect your IP address, which page you are visiting on our site, and may set a cookie to enable the feature to function properly. Social media features and widgets are either hosted by a third party or hosted directly on our website. Your interactions with these features are governed by the privacy policy of the company providing it. These cookies allow you to connect with your social networks and share content from our website, making it easier to spread awareness about sustainable water solutions. They may also be used by the social media platforms to track your browsing activity across different websites to build a profile of your interests, which can then be used for targeted advertising on their platforms. For example, if you share an article about Aquafiname's commercial solutions on LinkedIn, LinkedIn might use this information to show you more content related to sustainable business practices. We do not control these third-party cookies, and their use is subject to the respective social media platform's privacy policies. We include these features to enhance user engagement and facilitate the sharing of valuable information about our services. If you do not wish for these cookies to be placed on your device, you can typically manage your preferences through your social media account settings or by blocking third-party cookies in your browser settings. Disabling these cookies may limit your ability to use certain social media functionalities on our website. We encourage you to review the privacy policies of the social media platforms you use to understand their data collection and usage practices, ensuring your online interactions align with your personal privacy preferences. Our goal is to provide convenient sharing options while respecting your control over your data and online presence.</p>
+
+                <h2>3. How Long Do Cookies Last?</h2>
+                <p>The duration for which a cookie remains on your computer or mobile device depends on whether it is a "session" cookie or a "persistent" cookie:</p>
+                <ul>
+                    <li><strong>Session Cookies:</strong> These are temporary cookies that remain on your device only for as long as you keep your browser open. They are typically used for essential functions, such as enabling secure login sessions or remembering items in a shopping cart during a single visit. Once you close your browser, session cookies are automatically deleted. For Aquafiname, session cookies might be used to maintain your login state on our smart monitoring dashboard, ensuring you don't have to re-enter your credentials repeatedly during a single browsing session. They are crucial for the seamless navigation and functionality of our website during your active visit, providing a fluid and uninterrupted experience. The ephemeral nature of session cookies means they do not store long-term information about your browsing habits, focusing solely on facilitating your current interaction with the website. This type of cookie is fundamental for ensuring that our website operates efficiently and securely for the duration of your visit, contributing to a smooth and reliable user experience.</li>
+                    <li><strong>Persistent Cookies:</strong> These cookies remain on your device for a longer period, even after you close your browser. They have a specific expiration date, which can range from a few minutes to several years, depending on their purpose. Persistent cookies are used to remember your preferences, login details, or to track your browsing behavior over time. For Aquafiname, persistent cookies might be used to remember your language preference for future visits, or to recall your cookie consent choices so you don't see the consent banner every time you return. They are also commonly used by analytics and advertising services to track user interactions over multiple visits, helping us understand long-term trends and personalize content. The extended lifespan of persistent cookies allows for a more personalized and convenient experience across multiple interactions with our website. For example, if you frequently visit our website to check updates on rainwater harvesting technology, a persistent cookie might remember your preferences, ensuring that relevant content is displayed more prominently. These cookies are vital for enhancing user experience over time and for supporting our marketing and analytical efforts. You have the ability to delete persistent cookies manually through your browser settings at any time before their expiration date. Understanding the distinction between session and persistent cookies empowers you to better manage your online privacy and browsing preferences, giving you control over how long your data is stored and used for various purposes by Aquafiname and its partners.</li>
+                </ul>
+
+                <h2>4. Third-Party Cookies</h2>
+                <p>In addition to our own (first-party) cookies, we may also use various third-party cookies for reporting usage statistics of the Services, delivering advertisements on and through the Services, and other purposes. These third-party cookies are set by domains other than Aquafiname.com, and we do not directly control them. They are typically deployed by service providers with whom we partner to enhance our website's functionality, analytics, and advertising capabilities. Examples of third-party cookies we might use include:</p>
+                <ul>
+                    <li><strong>Google Analytics Cookies:</strong> These are used to collect information about how visitors use our website. We use the information to compile reports and to help us improve the website. The cookies collect information in an anonymous form, including the number of visitors to the website, where visitors have come to the website from, and the pages they visited. This data helps us understand user behavior and optimize our content and structure.</li>
+                    <li><strong>Google Ads Cookies:</strong> These cookies are used by Google to show relevant advertisements to users across the web. They track your visits to our website and other websites to build a profile of your interests, which then informs the ads you see. This helps us reach potential customers who are genuinely interested in sustainable water solutions.</li>
+                    <li><strong>Social Media Platform Cookies:</strong> When you interact with social media features (like "Share" or "Like" buttons) embedded on our site, the respective social media platform (e.g., Facebook, Twitter, LinkedIn) may set cookies. These cookies allow you to share content and may also track your browsing activity across different sites for their own purposes, including personalized advertising.</li>
+                    <li><strong>Video Embedding Cookies:</strong> If we embed videos from platforms like YouTube on our website, these platforms may set cookies to track video playback, remember your preferences, and potentially serve you relevant ads.</li>
+                    <li><strong>Customer Support Chat Cookies:</strong> If we use a third-party chat service for customer support, they may use cookies to remember your chat history or user ID for subsequent visits, ensuring a seamless support experience.</li>
+                </ul>
+                <p>The use of third-party cookies is governed by the privacy policies of the respective third parties, not by Aquafiname's Privacy Policy. We encourage you to review the privacy policies of these third-party providers to understand their data collection and usage practices. While we select our partners carefully, we cannot be held responsible for the privacy practices or content of third-party websites. By using our website, you acknowledge and agree that third-party cookies may be placed on your device. You can manage your preferences for these cookies through your browser settings or by utilizing specific opt-out tools provided by the third-party advertising networks or analytics providers. We are committed to working with partners who share our values regarding data privacy and security, ensuring that your online experience is both functional and respectful of your preferences.</p>
+
+                <h2>5. Your Choices Regarding Cookies</h2>
+                <p>You have the right to decide whether to accept or reject cookies. You can exercise your cookie preferences by managing your browser settings or by utilizing the cookie consent dialogue box on our website. Please be aware that if you choose to reject cookies, some functionalities and features of our website may not work as intended or may be limited. Here’s how you can manage your cookie preferences:</p>
+                <h3>5.1. Browser Settings:</h3>
+                <p>Most web browsers allow you to control cookies through their settings. You can typically configure your browser to:</p>
+                <ul>
+                    <li><strong>Block all cookies:</strong> This will prevent any cookies from being placed on your device. However, this is not recommended as it may severely impact the functionality of many websites, including ours, as strictly necessary cookies will also be blocked.</li>
+                    <li><strong>Block third-party cookies:</strong> This will prevent cookies from being set by domains other than the one you are currently visiting. This can help reduce tracking by advertising networks.</li>
+                    <li><strong>Delete existing cookies:</strong> You can clear all cookies stored on your device at any time.</li>
+                    <li><strong>Receive a notification before a cookie is set:</strong> Your browser will prompt you before accepting a new cookie, allowing you to decide whether to allow it.</li>
+                    <li><strong>Manage cookies on a site-by-site basis:</strong> Some browsers allow you to specify cookie preferences for individual websites.</li>
+                </ul>
+                <p>The method for managing cookies varies depending on the browser you use. For detailed instructions, please refer to your browser's official help pages:</p>
+                <ul>
+                    <li><a href="https://support.google.com/chrome/answer/95647?hl=en" target="_blank">Google Chrome</a></li>
+                    <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank">Mozilla Firefox</a></li>
+                    <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank">Microsoft Edge</a></li>
+                    <li><a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" target="_blank">Apple Safari</a></li>
+                    <li><a href="https://help.opera.com/en/latest/web-preferences/#cookies" target="_blank">Opera</a></li>
+                </ul>
+                <p>Please note that if you delete cookies or modify your browser settings, you may need to re-enter certain information or adjust preferences on subsequent visits to our website. This is because the cookies that remember those settings would have been removed. Managing cookies through your browser provides a broad level of control over your online privacy, allowing you to tailor your browsing experience to your comfort level.</p>
+
+                <h3>5.2. Opt-Out Tools:</h3>
+                <p>In addition to browser controls, you can opt-out of certain third-party advertising cookies by visiting the opt-out pages of the Network Advertising Initiative (NAI) or the Digital Advertising Alliance (DAA):</p>
+                <ul>
+                    <li><a href="https://optout.networkadvertising.org/?c=1" target="_blank">NAI Opt-Out Page</a></li>
+                    <li><a href="https://optout.aboutads.info/?c=2&lang=EN" target="_blank">DAA Opt-Out Page</a></li>
+                </ul>
+                <p>These industry-wide opt-out tools allow you to express your preferences regarding interest-based advertising from participating companies. Please note that opting out through these tools does not mean you will no longer receive advertising; it means that the advertising you see may be less relevant to your interests. Some advertising networks may not participate in these opt-out programs, and you may still receive targeted ads from those networks. Additionally, these opt-out mechanisms are typically cookie-based, meaning that if you delete your cookies, you may need to opt-out again. We strive to provide you with comprehensive options to manage your cookie preferences, ensuring that your online experience aligns with your privacy expectations and allows you to control the types of advertisements you encounter.</p>
+
+                <h3>5.3. Cookie Consent Dialogue Box:</h3>
+                <p>Upon your first visit to our website, or after a certain period, you will be presented with a cookie consent dialogue box at the bottom of the page. This dialogue box allows you to either "Accept All" cookies or "Decline" non-essential cookies. By clicking "Accept All," you consent to the use of all cookies described in this policy, including performance, functionality, and targeting/advertising cookies. By clicking "Decline," you opt-out of all non-essential cookies. Strictly necessary cookies will always be enabled to ensure the basic functionality of the website. Your choice will be remembered, typically for a period of [e.g., 12 months], after which you may be prompted again to reconfirm your preferences. This mechanism provides a clear and immediate way for you to express your cookie preferences directly on our website, in compliance with relevant data protection regulations. We believe this transparent approach empowers you to make an informed decision about your data privacy. You can revisit your cookie preferences at any time by clicking on a designated link (if available) or by clearing your browser's cookies, which will typically trigger the consent dialogue box again upon your next visit. Our goal is to make cookie management as straightforward and user-friendly as possible, ensuring that your experience on Aquafiname.com is both efficient and respectful of your privacy choices.</p>
+
+                <h2>6. Implications of Disabling Cookies</h2>
+                <p>While you have the freedom to manage your cookie preferences, it's important to understand the potential implications of disabling certain types of cookies on your browsing experience and the functionality of Aquafiname's website and services:</p>
+                <ul>
+                    <li><strong>Impact on Strictly Necessary Cookies:</strong> If you configure your browser to block all cookies, including strictly necessary cookies, certain essential functionalities of our website will cease to work. This includes, but is not limited to, secure login areas (such as your smart monitoring dashboard), the ability to submit forms, or maintaining your preferences across different pages. The website may become unusable or severely limited in its functionality. We strongly advise against blocking these cookies as they are fundamental for the basic operation and security of our online platform.</li>
+                    <li><strong>Impact on Performance Cookies:</strong> Disabling performance (analytical) cookies will prevent us from collecting anonymous data about your website usage. While this will not directly affect the immediate functionality of the site for you, it will limit our ability to understand how users interact with our website, identify areas for improvement, and optimize content. This could, over time, lead to a less refined user experience for all visitors as our insights into user behavior would be diminished.</li>
+                    <li><strong>Impact on Functionality Cookies:</strong> If you disable functionality cookies, our website will not be able to remember your personalized preferences. This means you might have to re-enter information or select your preferences (e.g., language settings, previously viewed items) every time you visit. While the site will still be navigable, the convenience and personalization aspects will be reduced, making your experience less seamless and efficient.</li>
+                    <li><strong>Impact on Targeting/Advertising Cookies:</strong> Opting out of targeting or advertising cookies means you will see less personalized advertisements. You will still encounter ads, but they will be generic and less relevant to your interests, as your browsing behavior will not be used to tailor them. This can be beneficial for privacy-conscious users, but it means you might miss out on promotions or information about Aquafiname products and services that could genuinely be of interest to you.</li>
+                    <li><strong>Overall User Experience:</strong> Generally, enabling cookies (especially functionality and performance cookies) leads to a more efficient, personalized, and enjoyable browsing experience. Disabling them can result in a more generic, repetitive, and potentially frustrating interaction with websites. We recommend carefully considering your choices and managing your preferences rather than implementing a blanket ban on all cookies.</li>
+                </ul>
+                <p>Your choices regarding cookies are respected, and we aim to provide you with the necessary information to make informed decisions. If you decide to change your cookie preferences after initially accepting or declining, you can typically do so through your browser settings or by clearing your cookies, which will prompt the consent dialogue box again on your next visit to our website.</p>
+
+                <h2>7. Other Tracking Technologies (Web Beacons, Pixels)</h2>
+                <p>In addition to cookies, Aquafiname may use other similar tracking technologies, such as web beacons (also known as "pixel tags" or "clear GIFs") and pixels. These are tiny graphics files that contain a unique identifier that enable us to recognize when someone has visited our website or opened an email that we have sent them. This allows us, for example, to monitor the traffic patterns of users from one page within our website to another, to deliver or communicate with cookies, to understand whether you have come to our website from an online advertisement displayed on a third-party website, and to improve site performance. Web beacons are often used in conjunction with cookies; if you disable cookies, web beacons may still be able to collect anonymous information about your visits, but they will not be able to link that information to your specific user profile.</p>
+                <p>We use these technologies to gain a more comprehensive understanding of how our website and marketing communications are performing. For instance, web beacons in emails help us track whether our newsletters are opened and if links within them are clicked, allowing us to refine our communication strategies and deliver more engaging content. Pixels placed on our website can help us understand which advertisements are most effective in driving traffic and conversions, enabling us to optimize our advertising spend. While these technologies primarily collect anonymous, aggregated data, when combined with other information, they can provide insights into individual user behavior. We are committed to using these tracking technologies responsibly and in compliance with all applicable data privacy laws. Your privacy is important to us, and we strive to ensure that our use of these tools is transparent and aligned with your expectations. If you have concerns about these technologies, managing your browser's cookie settings (as described in Section 5.1) will often limit their functionality, as they frequently rely on cookies to operate effectively.</p>
+
+                <h2>8. Changes to Our Cookies Policy</h2>
+                <p>Aquafiname may update this Cookies Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. For example, we may update it to reflect changes in the types of cookies we use or the purposes for which we use them. We will notify you of any significant changes by posting the new Cookies Policy on this page and updating the "Last Updated" date at the top of this policy. We may also provide more prominent notice (such as an email notification or a banner on our website) if the changes are material. You are advised to review this Cookies Policy periodically for any changes. Changes to this Cookies Policy are effective when they are posted on this page. Your continued use of our website and services after the revised Cookies Policy has become effective indicates that you have read, understood, and agreed to the current version of the Cookies Policy. We encourage you to regularly review this page to stay informed about how we are using cookies and protecting your privacy. Our commitment to transparency means we will always strive to keep you informed about our data practices and any updates to this policy, ensuring you have the necessary information to manage your preferences effectively.</p>
+
+                <h2>9. Contact Us Regarding Cookies and Privacy</h2>
+                <p>Your privacy is of utmost importance to Aquafiname. If you have any questions about this Cookies Policy, our use of cookies, or any other privacy-related concerns, please do not hesitate to contact our dedicated Privacy Team. We are committed to addressing your inquiries promptly and thoroughly. We understand that data privacy can be complex, and we are here to provide clarity and assistance.</p>
+                <p>You can reach us through the following channels:</p>
+                <ul>
+                    <li><strong>Email:</strong> For specific questions related to cookies, your data preferences, or to exercise your data protection rights (as outlined in our Privacy Policy), please email us at <a href="mailto:privacy@aquafiname.com">privacy@aquafiname.com</a>. This direct channel ensures your query reaches the team responsible for data governance and privacy compliance. When contacting us, please provide sufficient detail to help us understand your request and verify your identity if necessary.</li>
+                    <li><strong>Phone:</strong> If you prefer to speak with a representative, you can call our general inquiry line at <a href="tel:+15551234567">+1 (555) 123-4567</a>. Please mention that your inquiry relates to cookies or privacy, and you will be directed to the appropriate specialist. Our phone lines are open during standard business hours.</li>
+                    <li><strong>Postal Address:</strong> For formal correspondence or written inquiries regarding our data practices, you may send a letter to our headquarters:
+                        <address>
+                            Aquafiname Headquarters<br>
+                            123 Eco-Drive, Green City, Aqua State, 54321, Country
+                        </address>
+                        Please mark your envelope "Attention: Privacy Team" to ensure it reaches the correct department efficiently.</li>
+                    <li><strong>General Contact Form:</strong> For general inquiries that may include questions about cookies but are not solely focused on privacy rights, you can also use the contact form on our <a href="contact.html">Contact Us page</a>. While this form is for broader inquiries, our team will ensure that any privacy-related aspects of your message are forwarded to the Privacy Team for appropriate handling.</li>
+                </ul>
+                <p>We are dedicated to ensuring that you feel informed and in control of your data. We will respond to all legitimate requests and inquiries regarding your personal data and cookie preferences in accordance with applicable data protection laws. Your feedback and concerns help us uphold our commitment to transparency and responsible data management. Thank you for your trust in Aquafiname as we work towards smarter water and greener living, while respecting your privacy every step of the way.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="cookie-consent-overlay" id="cookieConsentOverlay">
+        <div class="cookie-consent-box">
+            <p>We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking "Accept All," you consent to our use of cookies. You can learn more in our <a href="cookies.html" style="color: #0288D1; text-decoration: underline;">Cookies Policy</a>.</p>
+            <div class="cookie-consent-buttons">
+                <button class="accept" id="acceptCookies">Accept All</button>
+                <button class="decline" id="declineCookies">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Aquafiname. All rights reserved.</p>
+            <p>Smarter Water. Greener Living. Harvest Every Drop. Precision Rainwater Solutions.</p>
+            <p><strong>Aquafiname Headquarters:</strong></p>
+            <p>123 Eco-Drive, Green City, Aqua State, 54321, Country</p>
+            <p>Email: info@aquafiname.com | Phone: +1 (555) 123-4567</p>
+            <div class="social-links">
+                <!-- Font Awesome for social icons -->
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p><small>Disclaimer: The information on this site is for general guidance only. Consult professionals for specific advice.</small></p>
+        </div>
+    </footer>
+    <!-- Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieConsentOverlay = document.getElementById('cookieConsentOverlay');
+            const acceptCookiesBtn = document.getElementById('acceptCookies');
+            const declineCookiesBtn = document.getElementById('declineCookies');
+
+            // Function to set a cookie
+            function setCookie(name, value, days) {
+                let expires = "";
+                if (days) {
+                    const date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+
+            // Function to get a cookie
+            function getCookie(name) {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+            // Check if cookie consent has been given
+            const consentGiven = getCookie('aquafiname_cookie_consent');
+
+            if (consentGiven) {
+                cookieConsentOverlay.style.display = 'none'; // Hide if consent already given
+            } else {
+                cookieConsentOverlay.style.display = 'flex'; // Show if no consent
+            }
+
+            acceptCookiesBtn.addEventListener('click', function() {
+                setCookie('aquafiname_cookie_consent', 'accepted', 365); // Consent for 1 year
+                cookieConsentOverlay.style.display = 'none';
+                // You might want to reload the page or trigger analytics scripts here
+                console.log('Cookies accepted.');
+            });
+
+            declineCookiesBtn.addEventListener('click', function() {
+                setCookie('aquafiname_cookie_consent', 'declined', 365); // Record decline for 1 year
+                cookieConsentOverlay.style.display = 'none';
+                // You might want to disable non-essential cookies here
+                console.log('Cookies declined. Non-essential cookies disabled.');
+                // For a real implementation, you would then remove/disable non-essential cookies
+                // This would involve more complex JavaScript to manage cookie categories.
+            });
+        });
+    </script>
+</body>
+</html>
